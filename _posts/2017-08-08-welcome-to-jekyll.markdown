@@ -1,25 +1,17 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2017-08-08 21:10:54 -0700
+title:  "Game Theory of Everything"
+date:   2019-05-20 10:00:00 -0800
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Hello, worldbuilders! 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+My name is Kris with a K. This summer I have the opportunity to work with iD Tech as a camp instructor. One of my new responsibilities is designing a curriculum for my campers to follow along with. To make that study plan as accessible as possible, I'll be pushing some entires over the next few weeks about cybersecurity, C++, and Python.
 
-Jekyll also offers powerful support for code snippets:
+I'm super excited to share what knowledge I can, and learn just as much. One thing I know is that software development is about much more than just coding -- teamwork and project management are obviously huge components, which in turn rest on having well-defined goals, metrics to track the pulse of those goals, and clear communication. So any tutorial, guide, or lesson plan I put up will definitely delve into what we are trying to achieve, why, and the costs and benefits of our chosen approach. Coding is only meaningful in context.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+The same can be said of games. Humans have been playing games since we could rub two sticks together; so much is revealed about an individual or society's value's from the games they play. Growing up with one hand on a controller and one in the real world certainly gave me some rather dramatized ideas about right and wrong, what kind of arc my own life would have, and what the world was like. I'm interested in games that resonate closer to real life, and even more, that combine real symbols and reactions in ways only possible through a simulation (because why try to imitate the real world, that does it so much better, when we could do something totally unique?). 
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+For instance, loot mechanics fundamentally disagree with space-time, cramming so many goodies into a single point like we had Mad-Eye Moody's trunk. Many games take this artistic liberty; but how many explore the ways a city's culture does the same geographically? We keep walking cyber-space in the three dimensions. We stay comfortable, replicating real life, rather than using the unique digital experience to contrast it. 
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Well those are just some general thoughts, and I'll certainly be making some hack-and-slash games like the next guy while I get my footing. Thank you for checking out my blog -- and don't touch that dial. 
