@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "Game Theory of Everything"
+title:  Game Theory of Everything
 date:   2019-05-20 10:00:00 -0800
-categories: jekyll update
 ---
 Hello, worldbuilders! 
 
