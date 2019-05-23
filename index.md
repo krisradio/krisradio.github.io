@@ -11,7 +11,7 @@ Ok, we're still under construction here, but at least we have one of those DeWal
 	Packet's coming through? 
 	Okay 
 
-That's just one of my remixes, little bit of lyrical genius. Well, it's easy when you're standing on the shoulders of beasts. Check out the blog on the left if you want to know more about what I've been up to. For the upcoming few months it should mainly be coding, game design, gardening, and hopefully some networking hardware projects. 
+That's just one of my remixes, little bit of lyrical genius. Well, it's easy when you're standing on the shoulders of beasts. Check out the [nav pane](nav.md) if you want to know more about what I've been up to. For the upcoming few months it will mainly be coding, game design, gardening, and networking hardware projects. 
 
 One more thing, let's be clear on how we're operating: 
 	
