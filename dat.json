@@ -1,4 +1,11 @@
 {
   "title": "KRIS Radio",
-  "description": "Personal blog and tutorial collection. "
+  "type": ["blog"],
+  "links": {
+    "license": [{
+      "href": "http://creativecommons.org/licenses/by-nc/2.5/",
+      "title": "CC BY-NC 2.5"
+    }]
+  },
+  "content_security_policy": "default-src 'self'",
 }
