@@ -3,12 +3,11 @@
   "destination": "build",
   "metadata": {
     "title": "KRIS Radio",
-    "description": "KRIS Radio is electromagnetic pollution for a purpose."
+    "description": "Personal site & blog."
   },
   "plugins": [
     {"metalsmith-drafts": false},
     {"metalsmith-markdown": true},
     {"metalsmith-permalinks": "posts/:title"},
-    {"metalsmith-layouts": "???"}
   ]
 }
