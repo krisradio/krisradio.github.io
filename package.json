@@ -1,16 +1,15 @@
 {
-  "name": "kris-radio",
+  "name": "KRIS Radio",
   "version": "0.1.0",
   "private": false,
   "description": "KRIS Radio is electromagnetic pollution for a purpose.",
   "author": "Kris Keillor",
   "dependencies": {
-    "metalsmith": "^2.3.0",
-    "metalsmith-markdown": "^1.2.0"
-  },
-  "main": "build.js",
-  "scripts": {
-    "prestart": "npm install",
-    "start": "node ."
+    "metalsmith": "^2.3.0"
   }
+  "main": "build.js",
+  "scripts": { 
+	"prestart": "npm install",
+	"start": "node ."
+	}
 }
