@@ -1,0 +1,14 @@
+{
+  "source": "posts",
+  "destination": "build",
+  "metadata": {
+    "title": "KRIS Radio",
+    "description": "KRIS Radio is electromagnetic pollution for a purpose."
+  },
+  "plugins": [
+    {"metalsmith-drafts": false},
+    {"metalsmith-markdown": true},
+    {"metalsmith-permalinks": "posts/:title"},
+    {"metalsmith-layouts": "???"}
+  ]
+}
