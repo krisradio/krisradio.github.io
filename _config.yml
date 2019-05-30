@@ -1,0 +1,63 @@
+# Site settings
+title: K R I S R a d i o
+description: "Personal blog."
+baseurl: "/krisradio.github.io"
+url: "https://krisrad.io"
+
+# User settings
+username: kriskeillor
+user_title: 
+email: kris.keillor@gmail.com
+twitter_username: kriskeillor
+github_username:  krisradio
+profile_picture: /assets/img/globe_headset_inv.png
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+links:
+  section_1:
+    - title: home
+      url: /
+      key_trigger: 1
+    - title: my posts
+      url: /posts
+      key_trigger: 2
+    - title: series
+      url: /series
+      key_trigger: 3
+    - title: tags
+      url: /tags
+      key_trigger: 4
+    - title: about me
+      url: /about
+      key_trigger: 5
+  section_2:
+    - title: github
+      url: http://www.github.com/krisradio
+      new_tab: true
+      key_trigger: g
+    - title: twitter
+      url: http://www.twitter.com/kriskeillor
+      key_trigger: t
+    - title: search
+      url: ""
+      key_trigger: s #WARNING: search only works with "s"
+
+# projects in header index
+projects:
+  - name: this site
+    url: https://krisrad.io
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
