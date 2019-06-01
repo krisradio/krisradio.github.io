@@ -33,3 +33,9 @@ In the end, we had a lot of bits moved around, the numbers on which I'd like to 
 I didn't give up as soon as I saw an instruction book, either. Granted, trying to install into a directory already plugged up with files is a losing gambit. I am not weighing out giving any three of these tools another shot. 
 
 However, I did spend quite a bit of time troubleshooting. Meanwhile, this `.md` entry is going up on `dat://`, `2 changed files with 36 additions and 0 deletions`.
+
+Ok, after the disappointing performances of `Jekyll`, `Ghost`, and `Metalsmith`, I decided to try the `mdbook` [rust crate](https://github.com/rust-lang-nursery/mdBook). Rust has been drawing me in for some time; I love the backing of Mozilla, a proven pioneer in the free internet, and the much-bespoke ease of jumping between low-level 'machine code' and high-level 'scripting code' is really exciting. 
+
+The install reassured me from jump, with only `12 files changed, 1787 insertions(+), 3 deletions` for copying the output of `mdbook init` into my source directory and modifying a couple config files. The first build added another `42 changed files with 7,487 additions and 0 deletions`. Again, I haven't actually ran these numbers through their statistical ropes, but we can tell from the metrics these projects have very different code bases, and therefore, teams backing them. 
+
+Once I fork the `mdbook` branch this entry should be live..! Let's find out. 
