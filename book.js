@@ -296,26 +296,12 @@ function playpen_text(playpen) {
 
 (function themes() {
     var html = document.querySelector('html');
-    var themeToggleButton = document.getElementById('theme-toggle');
-    var themePopup = document.getElementById('theme-list');
     var themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
     var stylesheets = {
         ayuHighlight: document.querySelector("[href$='ayu-highlight.css']"),
         tomorrowNight: document.querySelector("[href$='tomorrow-night.css']"),
         highlight: document.querySelector("[href$='highlight.css']"),
     };
-
-    function showThemes() {
-        themePopup.style.display = 'block';
-        themeToggleButton.setAttribute('aria-expanded', true);
-        themePopup.querySelector("button#" + document.body.className).focus();
-    }
-
-    function hideThemes() {
-        themePopup.style.display = 'none';
-        themeToggleButton.setAttribute('aria-expanded', false);
-        themeToggleButton.focus();
-    }
 
     function set_theme(theme) {
         let ace_theme;
@@ -350,7 +336,7 @@ function playpen_text(playpen) {
             });
         }
 
-        var previousTheme;
+        var previousTheme = "Ayu";
         try { previousTheme = localStorage.getItem('mdbook-theme'); } catch (e) { }
         if (previousTheme === null || previousTheme === undefined) { previousTheme = default_theme; }
 
@@ -368,36 +354,11 @@ function playpen_text(playpen) {
 
     set_theme(theme);
 
-    themeToggleButton.addEventListener('click', function () {
-        if (themePopup.style.display === 'block') {
-            hideThemes();
-        } else {
-            showThemes();
-        }
-    });
-
-    themePopup.addEventListener('click', function (e) {
-        var theme = e.target.id || e.target.parentElement.id;
-        set_theme(theme);
-    });
-
-    themePopup.addEventListener('focusout', function(e) {
-        // e.relatedTarget is null in Safari and Firefox on macOS (see workaround below)
-        if (!!e.relatedTarget && !themeToggleButton.contains(e.relatedTarget) && !themePopup.contains(e.relatedTarget)) {
-            hideThemes();
-        }
-    });
-
-    // Should not be needed, but it works around an issue on macOS & iOS: https://github.com/rust-lang-nursery/mdBook/issues/628
-    document.addEventListener('click', function(e) {
-        if (themePopup.style.display === 'block' && !themeToggleButton.contains(e.target) && !themePopup.contains(e.target)) {
-            hideThemes();
-        }
-    });
-
     document.addEventListener('keydown', function (e) {
         if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) { return; }
-        if (!themePopup.contains(e.target)) { return; }
+        if (!themePopup.contains(e.target)) { return; } 
+		// Not sure of the relevance of the above check, or this whole func really,
+		// since removing the theme selector 
 
         switch (e.key) {
             case 'Escape':
@@ -417,14 +378,6 @@ function playpen_text(playpen) {
                 if (li && li.nextElementSibling) {
                     li.nextElementSibling.querySelector('button').focus();
                 }
-                break;
-            case 'Home':
-                e.preventDefault();
-                themePopup.querySelector('li:first-child button').focus();
-                break;
-            case 'End':
-                e.preventDefault();
-                themePopup.querySelector('li:last-child button').focus();
                 break;
         }
     });
