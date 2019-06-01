@@ -6,7 +6,7 @@ multilingual = false
 src = "posts"
 
 [build]
-build-dir = "book"
+build-dir = "docs"
 create-missing = false
 
 [preprocess.index]

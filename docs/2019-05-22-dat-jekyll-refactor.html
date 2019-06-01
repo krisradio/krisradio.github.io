@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2019 May 22: Dat Jekyll Refactor - KRIS Radio</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Electromagnetic pollution for a purpose.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="coal">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="2019-05-30-three-static-site-generators.html">2019 May 30: Survey of Three Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html" class="active">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">KRIS Radio</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>layout: post
+title:  Refactoring from Jekyll to Dat
+date:   2019-05-20 10:00:00 -0800</p>
+<hr />
+<p>This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on <code>https://</code> to <code>dat://</code> is going to be interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not as much by most major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong host of backups - and mutations - to examine.</p>
+<ol>
+<li>
+<p>We initialize a new Dat in the already-existing git repository. My repositiory was setup as a Jekyll blog, so there's already a few files existing in the folder. We're going to hold onto some of the configuration files and the old <code>/_posts</code> folder, and build a new architecture around them.<br />
+<a href="2019-05-22-dir-after-dat-init.PNG">Fig. 001: Directory after Dat init.</a><br />
+Creating a new Dat from Beaker Browser's main menu initializes the .datignore files. Compared to a commercial solution, we obviously have a lot of control here. For now, I intend to stay agile while exploring the ecosystem of Dat, Hashbase, and their border with <code>https://</code>. So, I'm keeping the architecture will minimal while I focus on writing new content for the site.</p>
+</li>
+<li>
+<p>Jekyll left behind a lot of <code>gem</code> and <code>yaml</code> files, so I delete most of them. Some of the data in <code>_config.yml</code> I transfer over to <code>dat.json</code>. Json formatting is more common and standardized than Yaml -- again, that's not a very scientific judgement -- but the beautiful thing is the level of freedom I have here.<br />
+I'm not developing for a specific API, but I have the information that all of them use. It would be pretty easy to write interact with sockets on the <code>dat</code> ecosystem that use common fields like title, url, email, twitter_username, and github_username, the handful I grabbed from <code>_config.yaml</code>, and I can easily add more.</p>
+</li>
+<li>
+<p>That essentially brings this entry up to real time. The next steps are two:</p>
+<ul>
+<li>Investigate more stable and supported blogging suites. There are many decentralized and open source options to consider. There is also the hands-off stability of contracting professional services. Maintaining a minimal architecture leaves the door open to pivot to either. <a href="https://ghost.org/">Ghost</a> &amp; <a href="dat://ridder.seed.hex22.org/">Ridder</a> are two interesting options.</li>
+<li>Investigate how the site currently appears on Github pages (https), Hashbase.io (https &amp; dat), <em>and</em> my direct Dat address. Initially, they vary in appearance a lot more than what I saw in web development between different mainstream browsers. Hopefully, the functionality is intact across all three, but I can't conclusively say that yet.</li>
+</ul>
+</li>
+<li>
+<p>Results of the above:</p>
+<ul>
+<li>
+<p>In comparing Jekyll, Ghost, Cryogen, and Metalsmith. In the end I'm picking Metalsmith.<br />
+The main benefits with Jekyll were it's extensive integration with Github Pages, which is one of the three current mirrors of my site.<br />
+Ghost is well-established and seems to have a really strong team behind it, and good value from their Pro subscriptions.<br />
+Cryogen looks to be pretty lightweight, with a similar idealogy as Jekyll and Metalsmith.
+Our winner, Metalsmith however, is the simplest; matches the Yaml front matter format I'm currently using; and is based on pure JavaScript, not Ruby, Node.js, or Clojure. The simplicity and bare-metal approach wins out in my analysis, as I really want to keep this blog light and nimble - my focus is my other projects. It's also better-optimized for the p2p web, as bandwidth and processing power is limited for us.</p>
+</li>
+<li>
+<p><a href="2019-05-22-mirrors-https.png">Fig. 002: The site viewed on <code>https://</code></a>.<br />
+<a href="2019-05-22-mirros-dat.png">Fig. 003: The site viewed on <code>dat://</code></a>.<br />
+Dat appears much more user-friendly, as Beaker Browser natively renders Markdown. I really wish that was true in major browsers like Firefox, Opera, Chrome, &amp; Explorer - why do we keep all this html metadata around? - as well as on mobile browsers. Not supporting markdown is why I need to pick a static site generator, which is really more hassle than needed, as shown by Dat.<br />
+However, it is very interesting to see their mutated attempts. The Hashbase <code>https://</code> mirror only shows the file structure; users can't view files in-browser. Github Pages renders my <code>index.md</code> and <code>nav.md</code> files, which lack any yaml frontmatter - but 404's on my actual posts. Navigating to the raw posts on github.com, however, does show the yaml frontmatter - rendered as a table.<br />
+I'm using a few different protocols here that were not designed with each other in mind. This feels as much like an art experiment as a devlog. Or a breeding experiment, feeding radioactive data to different browsers and seeing which comes out on top.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Knowing what the next step is, I'll round out this entry on refactoring from Jekyll to pure Dat - really just gutting Jekyll with no alternative - with some thoughts on the p2p web.</p>
+<ul>
+<li>First, there are some interesting ways Dat lacks transparency or privacy. I'm still trying to understand how keys work. One thing is clear, multiwriter support requires integrating other libraries, namely <a href="https://awesome.datproject.org/hyperdrive-multiwriter">Hyperdrive</a>. That means using differnt computers, or even just upgrading to a new one, introduces new dependencies. And dat p2p protocol extension on firefox requires <a href="2019-05-22-firefox-dat-ext-permissions.PNG">extensive permissions (Fig. 004)</a>, introducing security and privacy concerns.</li>
+<li>Pushing changes to Beaker removes some of the json data I added to <code>dat.json</code>. That's not surprising, but it still crosses my sense of independence. I'm sure I'll have to swallow more changes in refactoring to Metalsmith.</li>
+<li>However, it is supremely easy to get up and running with <code>dat://</code>! Anyone in the world could access and download this entire website. I have a constellation of backups and mirrors that took no money, and almost no time, to spin up. It's much more user-friendly than my experiences with BitTorrent and Tor. I'm quite excited to continue the experiment!</li>
+</ul>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="2019-05-30-three-static-site-generators.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="2019-05-20-game-theory-of-everything.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="2019-05-30-three-static-site-generators.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="2019-05-20-game-theory-of-everything.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
