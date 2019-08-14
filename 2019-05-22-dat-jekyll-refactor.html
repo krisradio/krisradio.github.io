@@ -73,7 +73,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li class="affix"><a href="2019-05-30-three-static-site-generators.html">2019 May 30: Survey of Three Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html" class="active">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
+            <ol class="chapter"><li class="affix"><a href="2019-05-30-four-static-site-generators.html">2019 May 30: Survey of Four Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html" class="active">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -132,49 +132,28 @@
 title:  Refactoring from Jekyll to Dat
 date:   2019-05-20 10:00:00 -0800</p>
 <hr />
-<p>This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on <code>https://</code> to <code>dat://</code> is going to be interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not as much by most major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong host of backups - and mutations - to examine.</p>
+<p>This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on <code>https://</code> to <code>dat://</code> is quite interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not so much by the major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong hand of backups - and mutations - to examine.</p>
 <ol>
 <li>
 <p>We initialize a new Dat in the already-existing git repository. My repositiory was setup as a Jekyll blog, so there's already a few files existing in the folder. We're going to hold onto some of the configuration files and the old <code>/_posts</code> folder, and build a new architecture around them.<br />
 <a href="2019-05-22-dir-after-dat-init.PNG">Fig. 001: Directory after Dat init.</a><br />
-Creating a new Dat from Beaker Browser's main menu initializes the .datignore files. Compared to a commercial solution, we obviously have a lot of control here. For now, I intend to stay agile while exploring the ecosystem of Dat, Hashbase, and their border with <code>https://</code>. So, I'm keeping the architecture will minimal while I focus on writing new content for the site.</p>
+Creating a new Dat from Beaker Browser's main menu initializes the .datignore files. Compared to a commercial solution, we obviously have a lot of control here. For now, I intend to stay agile while exploring the ecosystem of Dat &amp; Hashbase, and their border with <code>https://</code>. So, I'm keeping the architecture will minimal while I focus on writing new content for the site.</p>
 </li>
 <li>
-<p>Jekyll left behind a lot of <code>gem</code> and <code>yaml</code> files, so I delete most of them. Some of the data in <code>_config.yml</code> I transfer over to <code>dat.json</code>. Json formatting is more common and standardized than Yaml -- again, that's not a very scientific judgement -- but the beautiful thing is the level of freedom I have here.<br />
-I'm not developing for a specific API, but I have the information that all of them use. It would be pretty easy to write interact with sockets on the <code>dat</code> ecosystem that use common fields like title, url, email, twitter_username, and github_username, the handful I grabbed from <code>_config.yaml</code>, and I can easily add more.</p>
+<p>Jekyll left behind a lot of <code>gem</code> and <code>yaml</code> files, so I delete most of them. Some of the data in <code>_config.yml</code> I transfer over to <code>dat.json</code>. Json formatting is more common and standardized than Yaml, but the beautiful thing is I have the freedom to pick either. Unfortunately, editing a <code>dat.json</code> in Beaker's UI deletes all data other than what their UI opens to you (e.g., Name &amp; Description), <a href="https://github.com/beakerbrowser/beaker/issues/1409">as I took issue with on Beaker's tracker</a>. For that reason, I highly recommend editing <code>dat.json</code> locally, and dealing with the lack of titles in Beaker.
+As for the information I'm including in <code>dat.json</code>, I'm not developing for a specific API, but I have the information that all of them use. It would be pretty easy to interact with sockets on the <code>dat</code> ecosystem that use common fields like title, url, email, twitter_username, and github_username, the handful I saved from jekyll's <code>_config.yaml</code>, and I can easily add more.</p>
 </li>
 <li>
-<p>That essentially brings this entry up to real time. The next steps are two:</p>
+<p>Finished with the initial rollback of jekyll, I had to decide on a static site generator, or try rolling my own. After surveying a few options <a href="2019-05-30-four-static-site-generators.html">detailed in my &quot;Survey of Four Static Site Generators&quot; entry</a>, I've decided to roll with <code>mdBook</code>. The short size of the code base was a big factor, plus I'm pretty stoked on rustlang. Check out <a href="2019-05-30-four-static-site-generators.html">that entry</a> to see how the Big Bads like Ghost and Jekyll competed with underdogs like Metalsmith and our winner, mdBook!</p>
+</li>
+<li>
+<p>Before we continue our easy-reading experience with mdBook, I'd like to take a moment to remember this site's alien birth, when it couldn't decide which dimension to live in and cried out for stability and comfort.</p>
 <ul>
-<li>Investigate more stable and supported blogging suites. There are many decentralized and open source options to consider. There is also the hands-off stability of contracting professional services. Maintaining a minimal architecture leaves the door open to pivot to either. <a href="https://ghost.org/">Ghost</a> &amp; <a href="dat://ridder.seed.hex22.org/">Ridder</a> are two interesting options.</li>
-<li>Investigate how the site currently appears on Github pages (https), Hashbase.io (https &amp; dat), <em>and</em> my direct Dat address. Initially, they vary in appearance a lot more than what I saw in web development between different mainstream browsers. Hopefully, the functionality is intact across all three, but I can't conclusively say that yet.</li>
-</ul>
-</li>
-<li>
-<p>Results of the above:</p>
-<ul>
-<li>
-<p>In comparing Jekyll, Ghost, Cryogen, and Metalsmith. In the end I'm picking Metalsmith.<br />
-The main benefits with Jekyll were it's extensive integration with Github Pages, which is one of the three current mirrors of my site.<br />
-Ghost is well-established and seems to have a really strong team behind it, and good value from their Pro subscriptions.<br />
-Cryogen looks to be pretty lightweight, with a similar idealogy as Jekyll and Metalsmith.
-Our winner, Metalsmith however, is the simplest; matches the Yaml front matter format I'm currently using; and is based on pure JavaScript, not Ruby, Node.js, or Clojure. The simplicity and bare-metal approach wins out in my analysis, as I really want to keep this blog light and nimble - my focus is my other projects. It's also better-optimized for the p2p web, as bandwidth and processing power is limited for us.</p>
-</li>
-<li>
-<p><a href="2019-05-22-mirrors-https.png">Fig. 002: The site viewed on <code>https://</code></a>.<br />
-<a href="2019-05-22-mirros-dat.png">Fig. 003: The site viewed on <code>dat://</code></a>.<br />
-Dat appears much more user-friendly, as Beaker Browser natively renders Markdown. I really wish that was true in major browsers like Firefox, Opera, Chrome, &amp; Explorer - why do we keep all this html metadata around? - as well as on mobile browsers. Not supporting markdown is why I need to pick a static site generator, which is really more hassle than needed, as shown by Dat.<br />
-However, it is very interesting to see their mutated attempts. The Hashbase <code>https://</code> mirror only shows the file structure; users can't view files in-browser. Github Pages renders my <code>index.md</code> and <code>nav.md</code> files, which lack any yaml frontmatter - but 404's on my actual posts. Navigating to the raw posts on github.com, however, does show the yaml frontmatter - rendered as a table.<br />
-I'm using a few different protocols here that were not designed with each other in mind. This feels as much like an art experiment as a devlog. Or a breeding experiment, feeding radioactive data to different browsers and seeing which comes out on top.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Knowing what the next step is, I'll round out this entry on refactoring from Jekyll to pure Dat - really just gutting Jekyll with no alternative - with some thoughts on the p2p web.</p>
-<ul>
-<li>First, there are some interesting ways Dat lacks transparency or privacy. I'm still trying to understand how keys work. One thing is clear, multiwriter support requires integrating other libraries, namely <a href="https://awesome.datproject.org/hyperdrive-multiwriter">Hyperdrive</a>. That means using differnt computers, or even just upgrading to a new one, introduces new dependencies. And dat p2p protocol extension on firefox requires <a href="2019-05-22-firefox-dat-ext-permissions.PNG">extensive permissions (Fig. 004)</a>, introducing security and privacy concerns.</li>
-<li>Pushing changes to Beaker removes some of the json data I added to <code>dat.json</code>. That's not surprising, but it still crosses my sense of independence. I'm sure I'll have to swallow more changes in refactoring to Metalsmith.</li>
-<li>However, it is supremely easy to get up and running with <code>dat://</code>! Anyone in the world could access and download this entire website. I have a constellation of backups and mirrors that took no money, and almost no time, to spin up. It's much more user-friendly than my experiences with BitTorrent and Tor. I'm quite excited to continue the experiment!</li>
+<li><a href="2019-05-22-mirrors-https.png">Fig. 002: The frankensite on <code>https://</code></a>.<br />
+<a href="2019-05-22-mirrors-dat.png">Fig. 003: Frankensite humanized on <code>dat://</code></a>.<br />
+Dat appears much more user-friendly, as Beaker Browser natively renders Markdown. I really wish that was true in major browsers like Firefox, Opera, Chrome, &amp; Explorer - why do we keep all this html metadata around? - as well as on mobile browsers. Not supporting markdown is why I need to pick a static site generator, which is really more hassle than needed, as shown by Dat.</li>
+<li>However, it is very interesting to see their mutated attempts. The Hashbase <code>https://</code> mirror only shows the file structure; users can't view files in-browser. Github Pages renders my <code>index.md</code> and <code>nav.md</code> files, which lack any yaml frontmatter - but 404's on my actual posts. Navigating to the raw posts on github.com, however, does show the yaml frontmatter - rendered as a table.</li>
+<li>I used a few different protocols here that were not designed with each other in mind. This feels as much like an art experiment as a devlog. Or a breeding lab, feeding radioactive data to different browsers and seeing which can adapt, survive, &amp; thrive. </li>
 </ul>
 </li>
 </ol>
@@ -184,7 +163,7 @@ I'm using a few different protocols here that were not designed with each other 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="2019-05-30-three-static-site-generators.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="2019-05-30-four-static-site-generators.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
@@ -202,7 +181,7 @@ I'm using a few different protocols here that were not designed with each other 
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="2019-05-30-three-static-site-generators.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="2019-05-30-four-static-site-generators.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 

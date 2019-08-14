@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>2019 May 30: Survey of Three Static Site Generators - KRIS Radio</title>
+        <title>2019 May 30: Survey of Four Static Site Generators - KRIS Radio</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Electromagnetic pollution for a purpose.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,7 +73,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li class="affix"><a href="2019-05-30-three-static-site-generators.html" class="active">2019 May 30: Survey of Three Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
+            <ol class="chapter"><li class="affix"><a href="2019-05-30-four-static-site-generators.html" class="active">2019 May 30: Survey of Four Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -129,34 +129,24 @@
                     <main>
                         <hr />
 <p>layout: post
-title:  Survey of Three Static Site Generators
+title:  Survey of Four Static Site Generators
 date:   2019-05-20 10:00:00 -0800</p>
 <hr />
-<p>The results are in.
-Installing <em>Ghost</em> resulted in <code>8,416 changed files with 608,083 additions and 0 deletions</code>. That was one <code>package-lock.json</code> and 8,415 files in <code>node_modules</code>. That's a much tidier, consolidated install than our other two options.</p>
-<p>That is, however, in addition to installing <code>ghost-cli</code>. <code>ghost-cli</code> is installed globally. Here's the output from that install. npm only warned me about one deprecation (far less than for Metalsmith):
-$ npm install -g ghost-cli@latest</p>
-<pre><code>    npm WARN deprecated cross-spawn-async@2.2.5: cross-spawn no longer requires a build toolchain, use it instead
-    C:\Users\Sacred Icon\AppData\Roaming\npm\ghost -&gt; C:\Users\Sacred
-    Icon\AppData\Roaming\npm\node_modules\ghost-cli\bin\ghost
-    + ghost-cli@1.10.1
-    added 359 packages from 191 contributors in 115.609s
-</code></pre>
-<p>Installing <em>Jekyll</em> created <code>9,674 changed files with 1,251,621 additions and 0 deletions</code>. After the basic library, I also had to install <code>gulp-cli</code>, anogolous to ghost-cli above. That gave me another <code>1,090 changed files with 41,289 additions and 293 deletions.</code></p>
-<p><code>npm install</code>, meaning we are just installing the jekyll library locally, listed several depracated packages and the distribution of 39 vulnerabilities between them. The final report:</p>
-<pre><code>added 893 packages from 462 contributors and audited 10535 packages in 281.321s
-found 84 vulnerabilities (39 low, 28 moderate, 17 high)
-</code></pre>
-<p>( I did not record the console outut for installing <code>gulp-cli</code>. )</p>
-<p>Installing <em>Metalsmith</em> resulted in <code>470 changed files with 62,866 additions and 0 deletions</code>, far less. However, Metalsmith had several more config files in the root directory: <code>package.json</code>, <code>package-lock.json</code>, <code>metalsmith.json</code>, and <code>build.js</code>.</p>
-<pre><code>[ghost install console output goes here]
-</code></pre>
-<p>In the end, we had a lot of bits moved around, the numbers on which I'd like to analyze by the metrics of size, reliability, &amp; security. But there are three more important data points: <em>none of them worked out of the box</em>.</p>
-<p>I didn't give up as soon as I saw an instruction book, either. Granted, trying to install into a directory already plugged up with files is a losing gambit. I am not weighing out giving any three of these tools another shot.</p>
-<p>However, I did spend quite a bit of time troubleshooting. Meanwhile, this <code>.md</code> entry is going up on <code>dat://</code>, <code>2 changed files with 36 additions and 0 deletions</code>.</p>
-<p>Ok, after the disappointing performances of <code>Jekyll</code>, <code>Ghost</code>, and <code>Metalsmith</code>, I decided to try the <code>mdbook</code> <a href="https://github.com/rust-lang-nursery/mdBook">rust crate</a>. Rust has been drawing me in for some time; I love the backing of Mozilla, a proven pioneer in the free internet, and the much-bespoke ease of jumping between low-level 'machine code' and high-level 'scripting code' is really exciting.</p>
-<p>The install reassured me from jump, with only <code>12 files changed, 1787 insertions(+), 3 deletions</code> for copying the output of <code>mdbook init</code> into my source directory and modifying a couple config files. The first build added another <code>42 changed files with 7,487 additions and 0 deletions</code>. Again, I haven't actually ran these numbers through their statistical ropes, but we can tell from the metrics these projects have very different code bases, and therefore, teams backing them.</p>
-<p>Once I fork the <code>mdbook</code> branch this entry should be live..! Let's find out. </p>
+<p>Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through?</p>
+<p>This entry has been completely rewritten after realizing how flawed my methods were. I was installing each package and manually counting the changes, attempting to get a configuration, etc. An attempt, but simply examining each package on their manager gives the same information -- faster and without variation due to my local specs.</p>
+<p>I used codetab's <a href="https://codetabs.com/count-loc/count-loc-online.html">Count LoC</a> to size up the codebases -- quite convenient as literally every option examined is based on github.</p>
+<p>To count dependencies, I just went to each option's package manager, be that rubygems.org, crates.io, or what have you. All told, here's how the numbers shake out:</p>
+<table><thead><tr><th align="right">              </th><th align="center">Ghost </th><th align="center">Jekyll</th><th align="center">Metalsmith</th><th align="center">mdBook</th></tr></thead><tbody>
+<tr><td align="right">Lines of Code </td><td align="center">121,792</td><td align="center">41,224 </td><td align="center">4,651      </td><td align="center">16,082 </td></tr>
+<tr><td align="right">Dependencies  </td><td align="center">86    </td><td align="center">12    </td><td align="center">0         </td><td align="center">19 (+6<sup class="footnote-reference"><a href="#1">1</a></sup>)</td></tr>
+</tbody></table>
+<p>However, this obscures the information about code vulnerabilities in those packages, or sub-dependencies! While doing it the hard way my packaged managed counted almost two hundred vulnerabilities between Ghost and Jekyll, and hundreds more packages installed than advertised as dependencies. Even my selected generator, mdBook, has <a href="https://github.com/rust-lang-nursery/mdBook/issues/847">two unlisted security vulnerabilities from fetching Google fonts -- and trackers</a>. (Don't worry, that reference has been removed from dat://krisrad.io!)</p>
+<p>So, in the end, mdBook won out due to it's small code base, active developer support (Metalsmith is smaller, but only has one main developer), and the fact that I've been learning rustlang anyways.</p>
+<p>Ghost and Jekyll are respectable platforms, but Ghost's paid options seem to be overtaking the free offering to the point where it feels more like a freemium product than FOSS. Jekyll has been fairly inactive for some time. Jekyll does, however, cohabitat with github pages and <code>dat://</code> pretty well.</p>
+<p>But more to the point, what is the point of running &quot;open source software&quot; if the code is so thick and overgrown, you close the book as soon as you open it? Now, if mainstream browsers had native support for markdown rendering, this site wouldn't be any thicker than before this entry: a whole 24 lines of code. But we've picked mdBook, and now the only thing to do is dive in headfirst. Until next time!</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>crates.io lists six dependencies of mdBook as &quot;optional&quot;. So the total could be 19 or 25, depending on how you take that. </p>
+</div>
 
                     </main>
 
