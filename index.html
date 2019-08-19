@@ -74,6 +74,16 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <ol class="chapter"><li class="affix"><a href="2019-05-30-four-static-site-generators.html">2019 May 30: Survey of Four Static Site Generators</a></li><li class="affix"><a href="2019-05-22-dat-jekyll-refactor.html">2019 May 22: Dat Jekyll Refactor</a></li><li class="affix"><a href="2019-05-20-game-theory-of-everything.html">2019 May 20: Game Theory of Everything</a></li></ol>
+			<div style="position: absolute; bottom:0;">
+				<svg xmlns="http://www.w3.org/2000/svg" class="vector fh" width="80%" baseProfile="full" version="1.1" viewBox="0 0 200 100" style="display: block; margin: auto; stroke: rgb(19, 21, 22); stroke-width: 10; stroke-linecap: square; fill: none;">
+					<g transform="translate(0,0)">
+						<path d="
+							M70,90 L40,50 L10,50 L40,10 L70,50 L40,50
+							M130,90 L 160,50 L190,50 L160,10 L130,50 L160, 50  
+							M60,30 L140,30  "/>
+					</g>
+				</svg>
+			</div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -128,25 +138,27 @@
                 <div id="content" class="content">
                     <main>
                         <hr />
-<p>layout: post
-title:  Survey of Four Static Site Generators
-date:   2019-05-20 10:00:00 -0800</p>
-<hr />
-<p>Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through?</p>
-<p>This entry has been completely rewritten after realizing how flawed my methods were. I was installing each package and manually counting the changes, attempting to get a configuration, etc. An attempt, but simply examining each package on their manager gives the same information -- faster and without variation due to my local specs.</p>
-<p>I used codetab's <a href="https://codetabs.com/count-loc/count-loc-online.html">Count LoC</a> to size up the codebases -- quite convenient as literally every option examined is based on github.</p>
-<p>To count dependencies, I just went to each option's package manager, be that rubygems.org, crates.io, or what have you. All told, here's how the numbers shake out:</p>
-<table><thead><tr><th align="right">              </th><th align="center">Ghost </th><th align="center">Jekyll</th><th align="center">Metalsmith</th><th align="center">mdBook</th></tr></thead><tbody>
-<tr><td align="right">Lines of Code </td><td align="center">121,792</td><td align="center">41,224 </td><td align="center">4,651      </td><td align="center">16,082 </td></tr>
-<tr><td align="right">Dependencies  </td><td align="center">86    </td><td align="center">12    </td><td align="center">0         </td><td align="center">19 (+6<sup class="footnote-reference"><a href="#1">1</a></sup>)</td></tr>
+<h2>layout: post
+title:  Survey of Four Static Site Generators 
+date:   2019-05-20 10:00:00 -0800</h2>
+<p>Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through? </p>
+<p>This entry has been completely rewritten after realizing how flawed my methods were. I was installing each package and manually counting the changes, attempting to get a configuration, etc. An attempt, but simply examining each package on their manager gives the same information -- faster and without variation due to my local specs. </p>
+<p>I used codetab's <a href="https://codetabs.com/count-loc/count-loc-online.html">Count LoC</a> to size up the codebases -- quite convenient as literally every option examined is based on github. </p>
+<p>To count dependencies, I just went to each option's package manager, be that rubygems.org, crates.io, or what have you. All told, here's how the numbers shake out: </p>
+<table><thead><tr><th align="right"></th><th align="center">Ghost</th><th align="center">Jekyll</th><th align="center">Metalsmith</th><th align="center">mdBook</th></tr></thead><tbody>
+<tr><td align="right">Lines of Code</td><td align="center">121,792</td><td align="center">41,224</td><td align="center">4,651</td><td align="center">16,082</td></tr>
+<tr><td align="right">Dependencies</td><td align="center">86</td><td align="center">12</td><td align="center">16</td><td align="center">25</td></tr>
+<tr><td align="right">Sub-Dependencies</td><td align="center">273</td><td align="center">881</td><td align="center">?</td><td align="center">201</td></tr>
+<tr><td align="right">Known Vulnerabilities</td><td align="center">9</td><td align="center">5</td><td align="center">0</td><td align="center">2</td></tr>
+<tr><td align="right">Sub-Vulnerabilities</td><td align="center">?</td><td align="center">84</td><td align="center">?</td><td align="center">0</td></tr>
 </tbody></table>
-<p>However, this obscures the information about code vulnerabilities in those packages, or sub-dependencies! While doing it the hard way my packaged managed counted almost two hundred vulnerabilities between Ghost and Jekyll, and hundreds more packages installed than advertised as dependencies. Even my selected generator, mdBook, has <a href="https://github.com/rust-lang-nursery/mdBook/issues/847">two unlisted security vulnerabilities from fetching Google fonts -- and trackers</a>. (Don't worry, that reference has been removed from dat://krisrad.io!)</p>
-<p>So, in the end, mdBook won out due to it's small code base, active developer support (Metalsmith is smaller, but only has one main developer), and the fact that I've been learning rustlang anyways.</p>
-<p>Ghost and Jekyll are respectable platforms, but Ghost's paid options seem to be overtaking the free offering to the point where it feels more like a freemium product than FOSS. Jekyll has been fairly inactive for some time. Jekyll does, however, cohabitat with github pages and <code>dat://</code> pretty well.</p>
-<p>But more to the point, what is the point of running &quot;open source software&quot; if the code is so thick and overgrown, you close the book as soon as you open it? Now, if mainstream browsers had native support for markdown rendering, this site wouldn't be any thicker than before this entry: a whole 24 lines of code. But we've picked mdBook, and now the only thing to do is dive in headfirst. Until next time!</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>crates.io lists six dependencies of mdBook as &quot;optional&quot;. So the total could be 19 or 25, depending on how you take that. </p>
-</div>
+<p>Notice how many more dependencies are introduced than advertised, and how many more vulnerabilities those sub-dependencies introduce. This paralyzing code creep is exactly what KRIS Radio was created to combat. </p>
+<p>What is the point of running &quot;open source software&quot; if the code is so thick and overgrown, you close the book with a headache as soon as you open it? Furthermore, what is the point of blogging -- to fiddle around with code you don't understand all day, or to put words on the internet? We are here today for that purpose alone; to find the meanest publishing suite that will get the job done. So let's look at our contenders again. </p>
+<p>Besides the extreme size of the codebase, Ghost's paid options seem to be overtaking the free offering to the point where it feels more like a freemium product than FOSS. For erecting a walled garden, and letting it overgrow, we give Ghost the axe. </p>
+<p>Jekyll has been fairly inactive for some time. Jekyll is Github Pages' preferred static generator, and works on <code>dat://</code> just fine (like any other <code>https://</code> standard). Therefore, the decentralized blogger interested in a low-cost <code>https://</code> mirror compatible with <code>dat://</code> could do quite well using Jekyll. While 1/3 the size of Ghost, Jekyll introduces three times as many dependencies (perhaps there's a Law of Conservation hidden there...). For logorrhoic logic and derelict development, we give Jekyll the boot. </p>
+<p>Metalsmith seems like the answer to our demands for slim, trim generation. Unfortunately, I had a devil of a time getting it to work, and the zero-dependencies figure obscures the fact that large amounts of functionality are relegated to plugins. Additionally, only one developer actively maintains Metalsmith, so updates are probably seen as infrequently as in Jekyll. For lack of support, we ruefully show Metalsmith the door (but wish the community!). </p>
+<p>You've probably figured out who won by now. Quite simply, mdBook has a very slim, easily understood code base, and was the only one I tested that worked strraigh out the box. Even there, installing mdBook on my machine still required another 201 sub-dependent crates beyond the 25 advertised. And the package even has <a href="https://github.com/rust-lang-nursery/mdBook/issues/847">two unlisted security vulnerabilities from fetching Google fonts -- and trackers</a>. (Don't worry, that reference has been removed from dat://krisrad.io!) However, balance is about making sacrifices, and we're not trying to reinvent the wheel here. </p>
+<p>Now, if the big browsers had native support for markdown's elgant simplicity, like you find when <a href="https://explore.beakerbrowser.com/">exploring the decentraweb on Beaker</a>, this entry would add a mere 34 lines of text, rather than the 205 lines of html mdbook, necessarily, renders it to. In an era of expanding corporate control and declining natural resources, the choice is up to you: continue to trust Big Brother, watching him get fat off the bread while farmland burns? Or take what you can carry on your back, set out, start understanding this brave new world? </p>
 
                     </main>
 
