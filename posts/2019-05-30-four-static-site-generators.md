@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Survey of Four Static Site Generators 
-date:   2019-05-20 10:00:00 -0800
+title:  Survey of Four Static Site Generators
+date:   2019-05-30 10:00:00 -0800
 ---
 Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through? 
 
