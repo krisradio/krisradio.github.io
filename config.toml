@@ -1,0 +1,23 @@
+# Preset vars 
+base_url = "https://krisrad.io"
+compile_sass = true
+theme = "radio"
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[extra]
+# Put all your custom variables here
+hyde_links = [
+    {url = "/", name = "ROOT/"},
+    {url = "/ENGD/blackbox", name = "ENGD/Black Box"},
+    {url = "/GROW/seedbomb", name = "GROW/Seed Bomb"},
+    {url = "https://soundcloud.com/krisradio", name = "REC/Hip Hop"},
+    {url = "/LOGS/mindmap", name = "LOGS/Mind Map"},
+    {url = "/content", name = "About"},
+]
+hyde_theme = "theme-base-0b"

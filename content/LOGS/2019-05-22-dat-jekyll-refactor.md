@@ -1,8 +1,7 @@
----
-layout: post
-title:  Refactoring from Jekyll to Dat
-date:   2019-05-22 10:00:00 -0800
----
++++
+layout= "post"
+title=  "Refactoring from Jekyll to Dat"
++++
 This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on `https://` to `dat://` is quite interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not so much by the major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong hand of backups - and mutations - to examine. 
 
 1. We initialize a new Dat in the already-existing git repository. My repositiory was setup as a Jekyll blog, so there's already a few files existing in the folder. We're going to hold onto some of the configuration files and the old `/_posts` folder, and build a new architecture around them.  

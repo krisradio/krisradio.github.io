@@ -1,8 +1,7 @@
----
-layout: post
-title:  Survey of Four Static Site Generators
-date:   2019-05-30 10:00:00 -0800
----
++++
+layout= "post"
+title=  "Survey of Four Static Site Generators"
++++
 Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through? 
 
 This entry has been completely rewritten after realizing how flawed my methods were. I was installing each package and manually counting the changes, attempting to get a configuration, etc. An attempt, but simply examining each package on their manager gives the same information -- faster and without variation due to my local specs. 

@@ -1,8 +1,7 @@
----
-layout: post
-title:  Game Theory of Everything
-date:   2019-05-20 10:00:00 -0800
----
++++
+layout= "post"
+title=  "Game Theory of Everything"
++++
 Hello, worldbuilders! 
 
 My name is Kris with a K. This summer I have the opportunity to work with iD Tech as a camp instructor. One of my new responsibilities is designing a curriculum for my campers to follow along with. To make that study plan as accessible as possible, I'll be pushing some entires over the next few weeks about cybersecurity, C++, and Python.
