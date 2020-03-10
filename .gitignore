@@ -3,3 +3,7 @@ _site
 .jekyll-metadata
 .drafts
 docs
+public
+themes
+*Thumbs.db
+content/

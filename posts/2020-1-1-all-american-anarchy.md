@@ -14,7 +14,7 @@ Maybe working display pyrotechnics, all those July 4<sup>th</sup>s rekindled my 
 
 Outraged, we forced a vote to officially endorse Bernie Sanders. At least we mere delegates had that right. The State Chair, Jaxon Ravens, poisoned this successful initiative: First, only the letter of the law was followed, by "endorsing" Bernie in a damn [blog post](https://www.wa-democrats.org/press/washington-state-democratic-party-endorses-bernie-sanders-president) more fit for a twitter thread. Second, Ravens undercut our vote with this patronizing statement: 
 
-> “I'm glad they could make their voices heard. However, Hillary Clinton will be our nominee, and we will do all that we can to ensure Donald Trump never becomes President."
+> â€œI'm glad they could make their voices heard. However, Hillary Clinton will be our nominee, and we will do all that we can to ensure Donald Trump never becomes President."
 
 It doesn't matter if the votes had already been counted (excepting the precious, unpledged Superdelagate's) -- *represent*atives must *represent* the will of the people, or it's a farce, not democracy. Ravens went against his own State Party. He lined up with the DNC. At that moment I understood that the Democratic Party is just another private club. 
 
