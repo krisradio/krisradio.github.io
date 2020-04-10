@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" version="1.1" width="705px" height="480px" style="fill: none; background-color:black; width: 705px; height: 480px;">
+        <defs>
+            <linearGradient id="pul-center" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="20%" stop-color="rgb(85, 135, 196)">
+					<animate id="s1" attributeName="offset" from="-20%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="50%" stop-color="rgb(128, 201, 205)">
+					<animate id="m1" attributeName="offset" from="0%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="80%" stop-color="rgb(85, 135, 196)">
+					<animate id="e1" attributeName="offset" from="0%" to="90%" dur="10s" repeatCount="indefinite" />
+				</stop>
+			</linearGradient>
+            
+            <linearGradient id="pul-horz" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="rgb(85, 135, 196)">
+					<animate id="s1" attributeName="offset" from="-20%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="0%" stop-color="rgb(128, 201, 205)">
+					<animate id="m1" attributeName="offset" from="0%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="0%" stop-color="rgb(85, 135, 196)">
+					<animate id="e1" attributeName="offset" from="0%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+			</linearGradient>
+            
+            <linearGradient id="pul-vert" x1="0%" y1="0%" x2="0%" y2="100%">
+				<stop offset="0%" stop-color="rgb(85, 135, 196)">
+					<animate id="s1" attributeName="offset" from="-20%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="0%" stop-color="rgb(128, 201, 205)">
+					<animate id="m1" attributeName="offset" from="0%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+				<stop offset="0%" stop-color="rgb(85, 135, 196)">
+					<animate id="e1" attributeName="offset" from="0%" to="100%" dur="10s" repeatCount="indefinite" />
+				</stop>
+			</linearGradient>
+		</defs>
+    
+    <path d="M195,60 L195,60 L195,60 A60,30 0 0,1 255,30 A60,30 0 0,1 315,60 L300,60 A60,30 0 0,1 240,90 A45,30 0 0,1 195,60 M435,60 L450,60 A60,30 0 0,0 510,90 A45,30 0 0,0 555,60 A60,30 0 0,0 495,30 A60,30 0 0,0 435,60 M225,45 A30,15 0 0,1 255,30 A30,15 0 0,1 285,45 A30,30 0 0,1 255,75 A30,30 0 0,1 225,45 M465,45 A30,15 0 0,1 495,30 A30,15 0 0,1 525,45 A30,30 0 0,1 495,75 A30,30 0 0,1 465,45 M345,315 A30,15 0 0,1 375,330 A30,15 0 0,1 405,315 M270,345 Q330,315 345,315 M465,345 M285,345 Q375,360 465,345 M285,345 Q375,420 465,345 M480,345 Q420,315 405,315 M330,255 L330,255 L345,225 M420,255 L420,255 L405,225 A15,30 0 0,1 420,255 M330,255 A15,30 0 0,1 345,225" stroke="url(#pul-center)" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M345,75 Q375,60 405,75 M360,255 Q375,270 390,255 M600,75 L600,75 L630,90 M150,75 L150,75 L120,90 M360,30 L360,30 L390,30" stroke="url(#pul-horz)" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M330,255 L330,255 L345,225 M420,255 L420,255 L405,225 M360,435 Q375,420 390,435 M405,225 A15,30 0 0,1 420,255 M330,255 A15,30 0 0,1 345,225 M375,105 L375,105 L375,105 L375,90 M450,195 L450,195 L510,300" stroke="url(#pul-vert)" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

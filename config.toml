@@ -1,4 +1,6 @@
 # Preset vars 
+title = "KRIS Radio"
+description = "Electromagnetic Pollution for a Purpose."
 base_url = "https://krisrad.io"
 compile_sass = true
 theme = "radio"
@@ -12,12 +14,12 @@ build_search_index = true
 
 [extra]
 # Put all your custom variables here
-hyde_links = [
+radio_nav_links = [
     {url = "/", name = "ROOT/"},
-    {url = "/ENGD/blackbox", name = "ENGD/Black Box"},
-    {url = "/GROW/seedbomb", name = "GROW/Seed Bomb"},
+    {url = "/ENGD/", name = "ENGD/"},
+    {url = "/GROW/", name = "GROW/"},
     {url = "https://soundcloud.com/krisradio", name = "REC/Hip Hop"},
-    {url = "/LOGS/mindmap", name = "LOGS/Mind Map"},
+    {url = "/LOGS/", name = "LOGS/"},
     {url = "/content", name = "About"},
 ]
-hyde_theme = "theme-base-0b"
+radio_logo = "/images/a-radio.svg"

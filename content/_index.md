@@ -2,9 +2,8 @@
 title=  "KRIS Radio"
 date=   2020-03-07
 weight = 2
-template = "page.html"
+template = "index.html"
 
-#page_template = 
 sort_by = "date"
 paginate_by = 0
 paginate_path = "entry"
@@ -13,8 +12,7 @@ insert_anchor_links = "none"
 in_search_index = true
 
 render = true
-transparent = false
-redirect_to = ""
+transparent = true
 aliases = []
 +++
 
