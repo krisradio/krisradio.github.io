@@ -16,10 +16,8 @@ build_search_index = true
 # Put all your custom variables here
 radio_nav_links = [
     {url = "/", name = "ROOT/"},
-    {url = "/ENGD/", name = "ENGD/"},
-    {url = "/GROW/", name = "GROW/"},
-    {url = "https://soundcloud.com/krisradio", name = "REC/Hip Hop"},
-    {url = "/LOGS/", name = "LOGS/"},
-    {url = "/content", name = "About"},
+    {url = "/engd/", name = "ENGD/"},
+    {url = "/media", name = "MEDIA/"},
+    {url = "/logs/", name = "LOGS/"},
 ]
 radio_logo = "/images/a-radio.svg"

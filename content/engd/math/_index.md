@@ -1,8 +1,8 @@
 +++
-title = "ENGD"
-date = 2020-03-07
-description = ""
-weight = 1
+title = "Math"
+date = 2020-04-12
+description = "The fundamentals: algebra, trig, calculus, and more."
+weight = 0
 template = "section.html"
 
 sort_by = "date"
@@ -15,8 +15,7 @@ in_search_index = true
 
 render = true
 
-transparent = true
-
+transparent = false
 aliases = []
 
 # Your own data.

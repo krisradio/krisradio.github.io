@@ -1,7 +1,7 @@
 +++
-title = "ENGD"
-date = 2020-03-07
-description = ""
+title = "Electricity"
+date = 2020-04-12
+description = "Core methods of analyzing circuits, as laid down by the greats."
 weight = 1
 template = "section.html"
 
@@ -15,10 +15,11 @@ in_search_index = true
 
 render = true
 
-transparent = true
+transparent = false
 
 aliases = []
 
 # Your own data.
 [extra]
 +++
+All sections are works in progress. 

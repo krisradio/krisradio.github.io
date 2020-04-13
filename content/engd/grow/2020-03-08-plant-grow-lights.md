@@ -1,5 +1,6 @@
 +++
-title= "Plant Grow Lights Analysis"
+title= "Four Corners Growth Lights Analysis"
+description = "Weighing the pros & cons of tube bulbs, LED strips, and custom-wired Power LED clusters. Part of our final project for Professor Brown's Technical Writing class, the Four Corners Garden."
 date= 2020-03-08
 template= "page.html"
 +++

@@ -1,7 +1,7 @@
 +++
-title = "ENGD"
+title = "MEDIA"
 date = 2020-03-07
-description = ""
+description = "Art and music."
 weight = 1
 template = "section.html"
 
@@ -22,3 +22,6 @@ aliases = []
 # Your own data.
 [extra]
 +++
+Work in progress. 
+
+Collages, watercolors, vector art, hip hop, poetry, & writing.

@@ -1,8 +1,8 @@
 +++
-title = "ENGD"
-date = 2020-03-07
-description = ""
-weight = 1
+title = "Growth"
+date = 2020-04-12
+description = "Design of hydroponic and lighting systems for plants."
+weight = 4
 template = "section.html"
 
 sort_by = "date"
@@ -15,7 +15,7 @@ in_search_index = true
 
 render = true
 
-transparent = true
+transparent = false
 
 aliases = []
 

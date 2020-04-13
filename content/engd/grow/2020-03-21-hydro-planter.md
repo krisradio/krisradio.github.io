@@ -1,5 +1,6 @@
 +++
 title= "Hydro Planter"
+description= "My take on the classic tradition of converting 2L soda bottles into hydroponic planters."
 date= 2020-03-21
 template= "page.html"
 sort_by="date"
