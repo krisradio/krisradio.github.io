@@ -2,7 +2,7 @@
 title = "Capacitance, Inductance, and Impedance"
 date = 2020-04-12
 description = "Fundamental properties of Capacitance, Inductance, and Impedance."
-weight = 1
+weight = 2
 template = "section.html"
 
 sort_by = "date"

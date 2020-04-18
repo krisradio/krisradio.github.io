@@ -1,7 +1,7 @@
 +++
 title = "Math"
 date = 2020-04-12
-description = "The fundamentals: algebra, trig, calculus, and more."
+description = "The fundamentals: algebra, trig, calculus, matrices, and more."
 weight = 0
 template = "section.html"
 
