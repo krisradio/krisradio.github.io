@@ -1,9 +1,4 @@
-_site
-.sass-cache
-.jekyll-metadata
-.drafts
-docs
-public
-themes
-*Thumbs.db
-content/
+Thumbs.db
+content/snippets
+public/
+themes/

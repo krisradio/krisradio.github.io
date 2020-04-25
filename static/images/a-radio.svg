@@ -1,0 +1,45 @@
+<svg height="112" width="106" xmlns="http://www.w3.org/2000/svg">
+    <style>line, path, circle,rect,polygon {
+          stroke: white;
+          stroke-width: 2;
+          stroke-opacity: 1;
+          fill-opacity: 0;
+          stroke-linecap: round;
+          stroke-linejoin: miter;
+        }
+    </style>
+
+    <path id="leftwave0" d="M 40,32 A 16,16 0,0,0 40,48"></path>
+    <g id="leftwave1">
+        <line class="solid" x1="31" x2="24" y1="18" y2="32"></line>
+        <path d="M 24,32 A 16,16 0,0,0 24,48"></path>
+        <line class="solid" x1="24" x2="31" y1="48" y2="62"></line>
+    </g>
+    <g id="leftwave2">
+        <line class="solid" x1="22" x2="8" y1="4" y2="32"></line>
+        <path d="M 8,32 A 16,16 0,0,0 8,48"></path>
+        <line class="solid" x1="8" x2="22" y1="48" y2="76"></line>
+    </g>
+    
+    <circle cx="52" cy="40" r="4" fill="none" />
+    
+    <path id="rightwave0" d="M 64,32 A 16,16 0,0,1 64,48"></path>
+    <g id="rightwave1">
+        <line class="solid" x1="73" x2="80" y1="18" y2="32"></line>
+        <path d="M 80,32 A 16,16 0,0,1 80,48"></path>
+        <line class="solid" x1="80" x2="73" y1="48" y2="62"></line>
+    </g>
+    <g id="rightwave2">
+        <line class="solid" x1="82" x2="96" y1="4" y2="32"></line>
+        <path d="M 96,32 A 16,16 0,0,1 96,48"></path>
+        <line class="solid" x1="96" x2="82" y1="48" y2="76"></line>
+    </g>
+    
+    <g id="tower">
+        <line class="solid" x1="52" x2="32" y1="56" y2="96"></line>
+        <line class="solid" x1="52" x2="72" y1="56" y2="96"></line>
+        <line class="solid" x1="32" x2="72" y1="96" y2="96"></line>
+        <line class="solid" x1="32" x2="24" y1="96" y2="112"></line>
+        <line class="solid" x1="72" x2="80" y1="96" y2="112"></line>
+    </g>
+</svg>
