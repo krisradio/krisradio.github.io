@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>KRIS Radio</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;krisrad.io&#x2F;radio.css">
+
+      
+
+      
+      
+    </head>
+
+    <body>
+        
+            <nav>
+                <ul>
+                    
+                        
+                            <li><a href="&#x2F;">ROOT&#x2F;</a></li>
+                        
+                            <li><a href="&#x2F;engd&#x2F;">ENGD&#x2F;</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;soundcloud.com&#x2F;krisradio">MEDIA&#x2F;SoundCloud ⇗</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;www.deviantart.com&#x2F;militant-jester">MEDIA&#x2F;deviantArt ⇗</a></li>
+                        
+                            <li><a href="&#x2F;logs&#x2F;">LOGS&#x2F;</a></li>
+                        
+                    
+                </ul>
+                
+                <div class="nav-about">
+                    <img src="&#x2F;images&#x2F;a-radio.svg" class="logo-img"/>
+                    <p>Electromagnetic pollution in pursuit of perfection. <br/> Keep up, or I might be red-shifted.</p>
+                </div>
+                
+            </nav>
+        
+
+        <div id="main">
+            <div id="menu-bar">
+                <div class="buttons">
+                    <button id="nav-toggle" class="menu-button " type="button" title="Toggle Menu" aria-label="Toggle Table of Contents" aria-controls="sidebar"> ☰ </button>
+                </div>
+                <h1>KRIS Radio</h1> 
+                <div class="buttons">
+                    <button id="search-toggle" class="menu-button" type="button" title="Search not yet enabled." aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar"> … </button>
+                </div>
+            </div>
+            
+            <div id="content">
+                <!-- idea: move search to menu bar -->
+                <!--<div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>-->
+            
+            
+<div class="post">
+  <h1 class="post-title">Refactoring from Jekyll to Dat</h1>
+  <span class="post-date">2019-05-22</span>
+  <p>This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on <code>https://</code> to <code>dat://</code> is quite interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not so much by the major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong hand of backups - and mutations - to examine. </p>
+<ol>
+<li>
+<p>We initialize a new Dat in the already-existing git repository. My repositiory was setup as a Jekyll blog, so there's already a few files existing in the folder. We're going to hold onto some of the configuration files and the old <code>/_posts</code> folder, and build a new architecture around them.<br />
+<a href="https://krisrad.io/engd/web/dat-jekyll-refactor/2019-05-22-dir-after-dat-init.PNG">Fig. 001: Directory after Dat init.</a><br />
+Creating a new Dat from Beaker Browser's main menu initializes the .datignore files. Compared to a commercial solution, we obviously have a lot of control here. For now, I intend to stay agile while exploring the ecosystem of Dat &amp; Hashbase, and their border with <code>https://</code>. So, I'm keeping the architecture will minimal while I focus on writing new content for the site. </p>
+</li>
+<li>
+<p>Jekyll left behind a lot of <code>gem</code> and <code>yaml</code> files, so I delete most of them. Some of the data in <code>_config.yml</code> I transfer over to <code>dat.json</code>. Json formatting is more common and standardized than Yaml, but the beautiful thing is I have the freedom to pick either. Unfortunately, editing a <code>dat.json</code> in Beaker's UI deletes all data other than what their UI opens to you (e.g., Name &amp; Description), <a href="https://github.com/beakerbrowser/beaker/issues/1409">as I took issue with on Beaker's tracker</a>. For that reason, I highly recommend editing <code>dat.json</code> locally, and dealing with the lack of titles in Beaker. 
+As for the information I'm including in <code>dat.json</code>, I'm not developing for a specific API, but I have the information that all of them use. It would be pretty easy to interact with sockets on the <code>dat</code> ecosystem that use common fields like title, url, email, twitter_username, and github_username, the handful I saved from jekyll's <code>_config.yaml</code>, and I can easily add more.</p>
+</li>
+<li>
+<p>Finished with the initial rollback of jekyll, I had to decide on a static site generator, or try rolling my own. After surveying a few options <a href="https://krisrad.io/engd/web/dat-jekyll-refactor/2019-05-30-four-static-site-generators.html">detailed in my &quot;Survey of Four Static Site Generators&quot; entry</a>, I've decided to roll with <code>mdBook</code>. The short size of the code base was a big factor, plus I'm pretty stoked on rustlang. Check out <a href="https://krisrad.io/engd/web/dat-jekyll-refactor/2019-05-30-four-static-site-generators.html">that entry</a> to see how the Big Bads like Ghost and Jekyll competed with underdogs like Metalsmith and our winner, mdBook! </p>
+</li>
+<li>
+<p>Before we continue our easy-reading experience with mdBook, I'd like to take a moment to remember this site's alien birth, when it couldn't decide which dimension to live in and cried out for stability and comfort. </p>
+<ul>
+<li><a href="https://krisrad.io/engd/web/dat-jekyll-refactor/2019-05-22-mirrors-https.png">Fig. 002: The frankensite on <code>https://</code></a>.<br />
+<a href="https://krisrad.io/engd/web/dat-jekyll-refactor/2019-05-22-mirrors-dat.png">Fig. 003: Frankensite humanized on <code>dat://</code></a>.<br />
+Dat appears much more user-friendly, as Beaker Browser natively renders Markdown. I really wish that was true in major browsers like Firefox, Opera, Chrome, &amp; Explorer - why do we keep all this html metadata around? - as well as on mobile browsers. Not supporting markdown is why I need to pick a static site generator, which is really more hassle than needed, as shown by Dat.</li>
+<li>However, it is very interesting to see their mutated attempts. The Hashbase <code>https://</code> mirror only shows the file structure; users can't view files in-browser. Github Pages renders my <code>index.md</code> and <code>nav.md</code> files, which lack any yaml frontmatter - but 404's on my actual posts. Navigating to the raw posts on github.com, however, does show the yaml frontmatter - rendered as a table.</li>
+<li>I used a few different protocols here that were not designed with each other in mind. This feels as much like an art experiment as a devlog. Or a breeding lab, feeding radioactive data to different browsers and seeing which can adapt, survive, &amp; thrive. </li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+            </div>
+        </div>
+       
+      <!-- JS, loaded after document -->
+      <script src="/scripts/nav.js" type="text/javascript" charset="utf-8"></script>
+      <!-- Overwrite this block in a child template to load extra scripts. -->
+      </body>
+</html>

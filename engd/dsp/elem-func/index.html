@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>KRIS Radio</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;krisrad.io&#x2F;radio.css">
+
+      
+
+      
+      
+    </head>
+
+    <body>
+        
+            <nav>
+                <ul>
+                    
+                        
+                            <li><a href="&#x2F;">ROOT&#x2F;</a></li>
+                        
+                            <li><a href="&#x2F;engd&#x2F;">ENGD&#x2F;</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;soundcloud.com&#x2F;krisradio">MEDIA&#x2F;SoundCloud ⇗</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;www.deviantart.com&#x2F;militant-jester">MEDIA&#x2F;deviantArt ⇗</a></li>
+                        
+                            <li><a href="&#x2F;logs&#x2F;">LOGS&#x2F;</a></li>
+                        
+                    
+                </ul>
+                
+                <div class="nav-about">
+                    <img src="&#x2F;images&#x2F;a-radio.svg" class="logo-img"/>
+                    <p>Electromagnetic pollution in pursuit of perfection. <br/> Keep up, or I might be red-shifted.</p>
+                </div>
+                
+            </nav>
+        
+
+        <div id="main">
+            <div id="menu-bar">
+                <div class="buttons">
+                    <button id="nav-toggle" class="menu-button " type="button" title="Toggle Menu" aria-label="Toggle Table of Contents" aria-controls="sidebar"> ☰ </button>
+                </div>
+                <h1>KRIS Radio</h1> 
+                <div class="buttons">
+                    <button id="search-toggle" class="menu-button" type="button" title="Search not yet enabled." aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar"> … </button>
+                </div>
+            </div>
+            
+            <div id="content">
+                <!-- idea: move search to menu bar -->
+                <!--<div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>-->
+            
+            
+<div class="post">
+  <h1 class="post-title">Elementary Signal Functions</h1>
+  <span class="post-date">2020-04-12</span>
+  <p>The core functions used in DSP are:</p>
+<ol>
+<li><a href="https://krisrad.io/engd/dsp/elem-func/#unit-impulse">Unit Impulse</a></li>
+<li><a href="https://krisrad.io/engd/dsp/elem-func/#unit-step">Unit Step</a></li>
+<li><a href="https://krisrad.io/engd/dsp/elem-func/#unit-ramp">Unit Ramp</a></li>
+<li><a href="https://krisrad.io/engd/dsp/elem-func/#sinusoids">Sinusoids</a></li>
+<li><a href="https://krisrad.io/engd/dsp/elem-func/#exponential">Exponential</a></li>
+</ol>
+<p>These functions can be viewed as pulses or through windows. </p>
+<h1 id="unit-impulse">Unit Impulse</h1>
+<p>δ(t)</p>
+<p>Unit Impulse is a function that does not follow the strict rules of mathematics. By setting the integration of some (well-behaved, continuous at 0) function over some interval equal to 1, we establish the initial approximation of the Unit Impulse: A narrow pulse with unitary area. </p>
+<p>By further narrowing the interval but maintaining the unit area, we require greater values from the original function. The Unit Impulse function is defined as the limit of this function as the interval width approaches zero. Therefore the Unit Impulse approaches infinity, but strictly speaking, the conditions of infinite amplitude and zero pulse width would <em>not</em> multiply to unit area -- but to undefined. That's why Unit Impulse is not, speaking strict mathematics, a true function. </p>
+<p>But it's useful for our purposes to take that approximation. We say: </p>
+<p style="text-align:center">
+δ(t) = 0 where t != 0 <br/>
+δ(t) = inf where t = 0
+</p>
+<p>The derivative of the Unit Impulse is the Unit Step. As we restrict the total area under</p>
+<h2 id="derivations-from-different-functions">Derivations from different functions</h2>
+<h3 id="rectangular-pulses">Rectangular Pulses</h3>
+<p style="text-align:center">
+x(t) = 1/T where |t| < T/2 <br/>
+x(t) = 0 where |t| >= T/2 <br/>
+δ(t) = limit of x(t) as T->0
+</p>
+<h3 id="exponential-curve">Exponential Curve</h3>
+<p style="text-align:center">
+x(t) = (1/2τ)e^(-|t|/τ) where -inf < t < inf <br/>
+δ(t) = limit of x(t) as τ->0
+</p>
+<h3 id="gaussian-function">Gaussian Function</h3>
+<p style="text-align:center">
+x(t) = (1/σ√(2π))e^(-x^2/2σ^2) where -inf < t < inf <br/>
+δ(t) = limit of x(t) as σ->0
+</p>
+<h3 id="sinc-function">Sinc Function</h3>
+<p style="text-align:center">
+x(t) = sin(πt/T)/(πt/T) where -inf < t < inf
+δ(t) = limit of x(t) as T->0
+</p>
+<h2 id="sieving-defintion">Sieving Defintion</h2>
+<p>The Sieving definition is a more rigorous way to define Unit Impulse. Given a function f(t), well-behaved and continous at t0,</p>
+<p style="text-align:center">
+[-inf to inf] ∫ f(t) δ(t - t0) dt = f(t0)
+</p>
+<h1 id="unit-step">Unit Step</h1>
+<p>The Unit Step function is akin to flipping on a switch -- it is zero for all t&lt;0, and one for all t&gt;=0: </p>
+<p style="text-align:center">
+u(t) = 1 where t >= 0 <br/>
+u(t) = 0 where t < 0
+</p>
+<p>Unit Step is the integral of <a href="https://krisrad.io/engd/dsp/elem-func/#unit-impulse">Unit Impulse</a>. This follows from requiring the area under the Unit Impulse 'curve' be 1. </p>
+<p>Integrating a function from zero to one (ignoring the paradoxical infinite rate of change) requires </p>
+<p>As with any other function, delaying t (subtracting a const.) moves the 'switching' 'out' i.e. more positive on the time axis, so later in time. Advancing t (adding a constant) moves the switch 'in' i.e. more negative on the time axis, or sooner in time.</p>
+<h1 id="unit-ramp">Unit Ramp</h1>
+<p>The Unit Ramp is zero for all t&lt;0, and thereafter rises with a slope of one. </p>
+<p style="text-align:center">
+r(t) = t where t >= 0 <br/>
+r(t) = 0 where t < 0</p>
+<h1 id="sinusoids">Sinusoids</h1>
+<p>Under Construction </p>
+<p>Sinusoids are periodic functions, but combining them may result in aperiodic functions. </p>
+<h1 id="exponential">Exponential</h1>
+<p style="text-align:center">
+x(t) = V0 e^(αt)
+</p>
+<p>The Exponential function grows or decays at a rate proportional to α. With +α, the exponential grows; with -α, the function decays. The Exponential function is unique for retaining its essential form throughout derivation and integration: only the magnitude changes, by </p>
+<p>Exponentials may be complex: of the form e^(st), where s = σ + jω. </p>
+
+</div>
+
+            </div>
+        </div>
+       
+      <!-- JS, loaded after document -->
+      <script src="/scripts/nav.js" type="text/javascript" charset="utf-8"></script>
+      <!-- Overwrite this block in a child template to load extra scripts. -->
+      </body>
+</html>

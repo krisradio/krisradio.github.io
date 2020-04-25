@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>KRIS Radio</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;krisrad.io&#x2F;radio.css">
+
+      
+
+      
+      
+    </head>
+
+    <body>
+        
+            <nav>
+                <ul>
+                    
+                        
+                            <li><a href="&#x2F;">ROOT&#x2F;</a></li>
+                        
+                            <li><a href="&#x2F;engd&#x2F;">ENGD&#x2F;</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;soundcloud.com&#x2F;krisradio">MEDIA&#x2F;SoundCloud ⇗</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;www.deviantart.com&#x2F;militant-jester">MEDIA&#x2F;deviantArt ⇗</a></li>
+                        
+                            <li><a href="&#x2F;logs&#x2F;">LOGS&#x2F;</a></li>
+                        
+                    
+                </ul>
+                
+                <div class="nav-about">
+                    <img src="&#x2F;images&#x2F;a-radio.svg" class="logo-img"/>
+                    <p>Electromagnetic pollution in pursuit of perfection. <br/> Keep up, or I might be red-shifted.</p>
+                </div>
+                
+            </nav>
+        
+
+        <div id="main">
+            <div id="menu-bar">
+                <div class="buttons">
+                    <button id="nav-toggle" class="menu-button " type="button" title="Toggle Menu" aria-label="Toggle Table of Contents" aria-controls="sidebar"> ☰ </button>
+                </div>
+                <h1>KRIS Radio</h1> 
+                <div class="buttons">
+                    <button id="search-toggle" class="menu-button" type="button" title="Search not yet enabled." aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar"> … </button>
+                </div>
+            </div>
+            
+            <div id="content">
+                <!-- idea: move search to menu bar -->
+                <!--<div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>-->
+            
+            
+<div class="post">
+  <h1 class="post-title">Survey of Four Static Site Generators</h1>
+  <span class="post-date">2019-05-30</span>
+  <p>Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through? </p>
+<p>This entry has been completely rewritten after realizing how flawed my methods were. I was installing each package and manually counting the changes, attempting to get a configuration, etc. An attempt, but simply examining each package on their manager gives the same information -- faster and without variation due to my local specs. </p>
+<p>I used codetab's <a href="https://codetabs.com/count-loc/count-loc-online.html">Count LoC</a> to size up the codebases -- quite convenient as literally every option examined is based on github. </p>
+<p>To count dependencies, I just went to each option's package manager, be that rubygems.org, crates.io, or what have you. All told, here's how the numbers shake out: </p>
+<table><thead><tr><th align="right"></th><th align="center">Ghost</th><th align="center">Jekyll</th><th align="center">Metalsmith</th><th align="center">mdBook</th></tr></thead><tbody>
+<tr><td align="right">Lines of Code</td><td align="center">121,792</td><td align="center">41,224</td><td align="center">4,651</td><td align="center">16,082</td></tr>
+<tr><td align="right">Dependencies</td><td align="center">86</td><td align="center">12</td><td align="center">16</td><td align="center">25</td></tr>
+<tr><td align="right">Sub-Dependencies</td><td align="center">273</td><td align="center">881</td><td align="center">?</td><td align="center">201</td></tr>
+<tr><td align="right">Known Vulnerabilities</td><td align="center">9</td><td align="center">5</td><td align="center">0</td><td align="center">2</td></tr>
+<tr><td align="right">Sub-Vulnerabilities</td><td align="center">?</td><td align="center">84</td><td align="center">?</td><td align="center">0</td></tr>
+</tbody></table>
+<p>Notice how many more dependencies are introduced than advertised, and how many more vulnerabilities those sub-dependencies introduce. This paralyzing code creep is exactly what KRIS Radio was created to combat. </p>
+<p>What is the point of running &quot;open source software&quot; if the code is so thick and overgrown, you close the book with a headache as soon as you open it? Furthermore, what is the point of blogging -- to fiddle around with code you don't understand all day, or to put words on the internet? We are here today for that purpose alone; to find the meanest publishing suite that will get the job done. So let's look at our contenders again. </p>
+<p>Besides the extreme size of the codebase, Ghost's paid options seem to be overtaking the free offering to the point where it feels more like a freemium product than FOSS. For erecting a walled garden, and letting it overgrow, we give Ghost the axe. </p>
+<p>Jekyll has been fairly inactive for some time. Jekyll is Github Pages' preferred static generator, and works on <code>dat://</code> just fine (like any other <code>https://</code> standard). Therefore, the decentralized blogger interested in a low-cost <code>https://</code> mirror compatible with <code>dat://</code> could do quite well using Jekyll. While 1/3 the size of Ghost, Jekyll introduces three times as many dependencies (perhaps there's a Law of Conservation hidden there...). For logorrhoic logic and derelict development, we give Jekyll the boot. </p>
+<p>Metalsmith seems like the answer to our demands for slim, trim generation. Unfortunately, I had a devil of a time getting it to work, and the zero-dependencies figure obscures the fact that large amounts of functionality are relegated to plugins. Additionally, only one developer actively maintains Metalsmith, so updates are probably seen as infrequently as in Jekyll. For lack of support, we ruefully show Metalsmith the door (but wish the community!). </p>
+<p>You've probably figured out who won by now. Quite simply, mdBook has a very slim, easily understood code base, and was the only one I tested that worked strraigh out the box. Even there, installing mdBook on my machine still required another 201 sub-dependent crates beyond the 25 advertised. And the package even has <a href="https://github.com/rust-lang-nursery/mdBook/issues/847">two unlisted security vulnerabilities from fetching Google fonts -- and trackers</a>. (Don't worry, that reference has been removed from dat://krisrad.io!) However, balance is about making sacrifices, and we're not trying to reinvent the wheel here. </p>
+<p>Now, if the big browsers had native support for markdown's elgant simplicity, like you find when <a href="https://explore.beakerbrowser.com/">exploring the decentraweb on Beaker</a>, this entry would add a mere 34 lines of text, rather than the 205 lines of html mdbook, necessarily, renders it to. In an era of expanding corporate control and declining natural resources, the choice is up to you: continue to trust Big Brother, watching him get fat off the bread while farmland burns? Or take what you can carry on your back, set out, start understanding this brave new world? </p>
+
+</div>
+
+            </div>
+        </div>
+       
+      <!-- JS, loaded after document -->
+      <script src="/scripts/nav.js" type="text/javascript" charset="utf-8"></script>
+      <!-- Overwrite this block in a child template to load extra scripts. -->
+      </body>
+</html>
