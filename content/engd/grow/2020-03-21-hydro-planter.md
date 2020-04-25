@@ -4,6 +4,7 @@ description= "My take on the classic tradition of converting 2L soda bottles int
 date= 2020-03-21
 template= "page.html"
 sort_by="date"
+weight = 2
 +++
 
 ## Hydro Planter

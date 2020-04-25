@@ -3,7 +3,7 @@ title = "Voltage, Current, and Resistance"
 date = 2020-04-12
 description = "Fundamental properties of Voltage, Current, and Resistance."
 weight = 1  
-template = "section.html"
+template = "page.html"
 
 sort_by = "date"
 paginate_by = 0

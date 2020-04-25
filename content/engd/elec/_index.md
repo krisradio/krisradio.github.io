@@ -3,9 +3,9 @@ title = "Electricity"
 date = 2020-04-12
 description = "Core methods of analyzing circuits, as laid down by the greats."
 weight = 1
-template = "section.html"
+template = "supersection.html"
 
-sort_by = "date"
+sort_by = "weight"
 paginate_by = 0
 paginate_path = "entry"
 

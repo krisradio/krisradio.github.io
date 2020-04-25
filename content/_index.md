@@ -1,5 +1,5 @@
 +++
-title=  "KRIS Radio"
+title=  "Ride the Wave!"
 date=   2020-03-07
 weight = 2
 template = "index.html"
@@ -15,7 +15,6 @@ render = true
 transparent = true
 aliases = []
 +++
-
-Electromagnetic Pollution for a Purpose.
-
-All views expressed herein are mine and mine alone; they do not reflect the dogma of any corporation, state, NGO, or affinity group.
+Electromagnetic pollution in the pursuit of self determination, autonomy, mastery, and connection. Everything you ever wanted to know about radio waves, you'll find here. Start with **[ENGD](/ENGD)**, my Engineering & Design tree.  
+Ever wanted to find yourself? Me too --  
+Let's get lost together!

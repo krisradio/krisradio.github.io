@@ -5,7 +5,7 @@ description = "Programming and design in HTML, CSS, and JavaScript."
 weight = 5
 template = "section.html"
 
-sort_by = "date"
+sort_by = "weight"
 paginate_by = 0
 paginate_path = "entry"
 

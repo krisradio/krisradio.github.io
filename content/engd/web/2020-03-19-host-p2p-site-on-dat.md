@@ -2,6 +2,7 @@
 title= "Self Host a P2P site (with centralized backups)"
 date= 2020-03-19
 template= "page.html"
+weight= 2
 +++
 
 Dat is a new internet communications protocol.

@@ -5,7 +5,7 @@ description = "The fundamentals: algebra, trig, calculus, matrices, and more."
 weight = 0
 template = "section.html"
 
-sort_by = "date"
+sort_by = "weight"
 paginate_by = 0
 paginate_path = "entry"
 

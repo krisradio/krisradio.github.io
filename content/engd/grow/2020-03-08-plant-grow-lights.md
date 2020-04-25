@@ -1,8 +1,9 @@
 +++
 title= "Four Corners Growth Lights Analysis"
-description = "Weighing the pros & cons of tube bulbs, LED strips, and custom-wired Power LED clusters. Part of our final project for Professor Brown's Technical Writing class, the Four Corners Garden."
+description = "Weighing the pros & cons of tube bulbs, LED strips, and hard-wired Power LED clusters."
 date= 2020-03-08
 template= "page.html"
+weight = 3
 +++
 
 As part of the [Four Corners Garden](https://vikingring.netlify.com/), I was tasked with identifying economical, ecological plant grow lights. First: A primer on the properties of lighting; next: a table breaking down the three options I identified; then: how the contenders perform in Team Four Corners' primary metrics of Utility, Price, & Ecology. And finally: the champion is decided. 

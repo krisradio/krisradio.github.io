@@ -12,4 +12,4 @@ The same can be said of games. Humans have been playing games since we could rub
 
 For instance, loot mechanics fundamentally disagree with space-time, cramming so many goodies into a single point like we had Mad-Eye Moody's trunk. Many games take this artistic liberty; but how many explore the ways a city's culture does the same geographically? We keep walking cyber-space in the three dimensions. We stay comfortable, replicating real life, rather than using the unique digital experience to contrast it. 
 
-Well those are just some general thoughts, and I'll certainly be making some hack-and-slash games like the next guy while I get my footing. Thank you for checking out my blog -- and don't touch that dial. 
+Well those are just some general thoughts, and I'll certainly be making some hack-and-slash games like the next guy while I get my footing. Thanks for tuning in to KRIS Radio -- and *don't touch that dial!* 

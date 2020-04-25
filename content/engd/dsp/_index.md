@@ -5,7 +5,7 @@ description = "The study of analysing, modifying and synthesizing signals such a
 weight = 2
 template = "section.html"
 
-sort_by = "date"
+sort_by = "weight"
 paginate_by = 0
 paginate_path = "entry"
 

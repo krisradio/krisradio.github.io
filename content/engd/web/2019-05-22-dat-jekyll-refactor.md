@@ -1,6 +1,8 @@
 +++
 layout= "post"
 title=  "Refactoring from Jekyll to Dat"
+template= "page.html"
+weight = 4
 +++
 This is a live walkthrough of refactoring a Jekyll blog into a Dat site. Comparing our site on `https://` to `dat://` is quite interesting. I'm currently encoding entries in markdown, which is natively supported by Beaker -- not so much by the major browsers. However, with the site hosted on Github, Hashbase, and my own computer, we will have a strong hand of backups - and mutations - to examine. 
 

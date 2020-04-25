@@ -1,6 +1,8 @@
 +++
 title=  "Survey of Four Static Site Generators"
 layout= "post"
+template= "page.html"
+weight= 3
 +++
 Since the centralized web wants a heavyweight fight, with everything wrapped in hypertext markup, KRIS Radio has to move to a static site generator. Why not write an entry about the tournament we put the contestants through? 
 

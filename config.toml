@@ -1,6 +1,6 @@
 # Preset vars 
 title = "KRIS Radio"
-description = "Electromagnetic Pollution for a Purpose."
+description = "Electromagnetic pollution in pursuit of perfection. <br/> Keep up, or I might be red-shifted."
 base_url = "https://krisrad.io"
 compile_sass = true
 theme = "radio"
@@ -17,7 +17,11 @@ build_search_index = true
 radio_nav_links = [
     {url = "/", name = "ROOT/"},
     {url = "/engd/", name = "ENGD/"},
-    {url = "/media", name = "MEDIA/"},
+    {url = "https://soundcloud.com/krisradio", name = "MEDIA/SoundCloud ⇗"},
+    {url = "https://www.deviantart.com/militant-jester", name="MEDIA/deviantArt ⇗"},
     {url = "/logs/", name = "LOGS/"},
 ]
 radio_logo = "/images/a-radio.svg"
+radio_index_splash = "images/planetary-radio.svg"
+radio_section_col = 3
+radio_page_col = 2
