@@ -15,6 +15,6 @@ render = true
 transparent = true
 aliases = []
 +++
-Electromagnetic pollution in the pursuit of self determination, autonomy, mastery, and connection. Everything you ever wanted to know about radio waves, you'll find here. Start with **[ENGD](/ENGD)**, my Engineering & Design tree.  
+Electromagnetic pollution in the pursuit of self determination, autonomy, mastery, and connection. Everything you ever wanted to know about radio waves, you'll find here. Start with **[ENGD](/engd)**, my Engineering & Design tree.  
 Ever wanted to find yourself? Me too --  
 Let's get lost together!
