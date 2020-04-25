@@ -16,7 +16,7 @@
         
         sub.addEventListener('mouseenter', function splashSpan() {
             var span = this.getElementsByTagName("span")[0];
-            span.style.opacity = "100%";
+            span.style.opacity = "1";
             
             var spanHeight = span.offsetHeight + "px";
             var h = this.getElementsByTagName("h3")[0];
@@ -25,7 +25,7 @@
         
         sub.addEventListener('mouseleave', function unsplash() {
             var span = this.getElementsByTagName("span")[0];
-            span.style.opacity = "0%";
+            span.style.opacity = "0";
             
             var spanHeight = span.offsetHeight + "px";
             var h = this.getElementsByTagName("h3")[0];
