@@ -22,6 +22,11 @@ aliases = []
 # Your own data.
 [extra]
 +++
+## Capacitance
+Current through a capacitor equals the capacitance times the derivative of the terminal voltage:
+
+I = C dV/dt 
+
 ##  Impedance
 ##  RC Circuits 
 1.  Natural Response
