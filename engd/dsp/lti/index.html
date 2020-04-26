@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>KRIS Radio</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;krisrad.io&#x2F;radio.css">
+
+      
+
+
+      <!-- CSS & JS for Katex math formatting. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.css" integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js" integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
+      <!-- Automatically render Katex onload. -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+      
+      
+    </head>
+
+    <body>
+        
+            <nav>
+                <ul>
+                    
+                        
+                            <li><a href="&#x2F;">ROOT&#x2F;</a></li>
+                        
+                            <li><a href="&#x2F;engd&#x2F;">ENGD&#x2F;</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;soundcloud.com&#x2F;krisradio">MEDIA&#x2F;SoundCloud ⇗</a></li>
+                        
+                            <li><a href="https:&#x2F;&#x2F;www.deviantart.com&#x2F;militant-jester">MEDIA&#x2F;deviantArt ⇗</a></li>
+                        
+                            <li><a href="&#x2F;logs&#x2F;">LOGS&#x2F;</a></li>
+                        
+                    
+                </ul>
+                
+                <div class="nav-about">
+                    <img src="&#x2F;images&#x2F;a-radio.svg" class="logo-img"/>
+                    <p>Electromagnetic pollution in pursuit of perfection. <br/> Keep up, or I might be red-shifted.</p>
+                </div>
+                
+            </nav>
+        
+
+        <div id="main">
+            <div id="menu-bar">
+                <div class="buttons">
+                    <button id="nav-toggle" class="menu-button " type="button" title="Toggle Menu" aria-label="Toggle Table of Contents" aria-controls="sidebar"> ☰ </button>
+                </div>
+                <h1>KRIS Radio</h1> 
+                <div class="buttons">
+                    <button id="search-toggle" class="menu-button" type="button" title="Search not yet enabled." aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar"> … </button>
+                </div>
+            </div>
+            
+            <div id="content">
+                <!-- idea: move search to menu bar -->
+                <!--<div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>-->
+            
+            
+<div class="post">
+  <h1 class="post-title">Linear Time-Invariant Systems</h1>
+  <span class="post-date">2020-04-26</span>
+  <p>The premsie of a Linear Time-Invariant System is that <em>any</em> linear combination of input equations with <em>any</em> time shifts can be mapped to valid output equations in a given LTI System. This rule is called &quot;<em>Superposition</em>&quot;. According to <a href="https://www.dspguide.com/ch5/6.htm">dspguide.com</a>, superposition is the &quot;basis of nearly all signal processing techniques&quot;. </p>
+<p>Besides the utility of chopping up, scaling, and translating signal blocks, superposition is a powerful idea that asks us to break complex problems down into manageable pieces. </p>
+<h2 id="linearity">Linearity</h2>
+<p>Call this the input/output mapping of a system: </p>
+<p>\[x(t) \Rightarrow y(t)\]</p>
+<p>We identify two specific input/output pairs: </p>
+<p>\[x_1(t) \Rightarrow y_1(t)\]
+\[x_2(t) \Rightarrow y_2(t)\]</p>
+<p>If the system is Linear, we can add linear combinations of the input x(t) functions together to composite a valid output y(t): </p>
+<p>\[x_3(t) = ax_1(t) + bx_2(t) \Rightarrow y_3(t) = ay_1(t) + by_2(t)\]</p>
+<p>The output mapped by x<sub>3</sub>(t) exactly equals the <em>addition</em> of the outputs mapped by ax<sub>1</sub>(t) and bx<sub>2</sub>(t). That a linear system's premise. We can show the same result using matrix algebra. Here we add the mapped outputs of the two discrete functions together: </p>
+<p>\[\begin{bmatrix} a \\ 0 \end{bmatrix} [x(t)] + \begin{bmatrix} 0 \\ b \end{bmatrix} [x(t)] \Rightarrow \begin{bmatrix} ay(t) \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ by(t) \end{bmatrix} = \begin{bmatrix} ay(t) \\ by(t) \end{bmatrix}\]</p>
+<p>While here, we create a composite input of two x(t) functions, with coefficients a and b, mapping the composite function input to the exact same output matrix:</p>
+<p>\[\begin{bmatrix} a \\ b \end{bmatrix} [x(t)] \Rightarrow \begin{bmatrix} ax(t) \\ bx(t) \end{bmatrix}\]</p>
+<p>Linear combination of inputs mapping to the exact same single output as the linear combination of outputs from discrete inputs is the condition of a linear system. </p>
+<h3 id="linearity-test">Linearity Test</h3>
+<p>The five steps to prove that a system is linear follow from the condition above: </p>
+<ol>
+<li>Map the first input-output pair:<br />
+x<sub>1</sub>(t) ⇒ y<sub>1</sub>(t)</li>
+<li>Map the second input-output pair:<br />
+x<sub>2</sub>(t) ⇒ y<sub>2</sub>(t)</li>
+<li>Create a linear-combination <em>input</em> and map its output:<br />
+x<sub>3</sub>(t) = ax<sub>1</sub>(t) + bx<sub>2</sub>(t) ⇒ y<sub>3</sub>(t)</li>
+<li>Find the linear-combination <em>output</em> a linear system would have:<br />
+y<sub>L</sub>(t) = ay<sub>1</sub>(t) + by<sub>2</sub>(t)</li>
+<li>The system is linear if the outputs match:<br />
+y<sub>3</sub>(t) ?= y<sub>L</sub>(t)</li>
+</ol>
+<h2 id="time-invariance">Time Invariance</h2>
+<p>Taking the same fundamental input/output mapping: </p>
+<p>\[x(t) \Rightarrow y(t)\]</p>
+<p>We identify a specific input/output pair at another point in time: </p>
+<p>\[x_1(t-T) \Rightarrow y_1(t-T)\]</p>
+<p>If the system is Time Invariant, the time-shifted input x<sub>1</sub>(t) maps to the same specific y(t) function, y<sub>1</sub>(t), as you'd find by time-shifting the system's mapped output.</p>
+<h3 id="time-invariance-test">Time Invariance Test</h3>
+<p>The four steps to prove a system's time invariance follow from the above condition: </p>
+<ol>
+<li>Map the systems general input-output pairing:<br />
+x(t) = y(t)</li>
+<li>Define a time-shifted input and its paired output:<br />
+x<sub>1</sub>(t) = x(t-T) ⇒ y<sub>1</sub>(t) = y(t-T)</li>
+<li>Find the time-shifted output a TI system <em>would</em> have:<br />
+y<sub>TI</sub>(t) = y(t-T)</li>
+<li>The system is time invariant if the outputs match:<br />
+y<sub>1</sub>(t) ?= y<sub>TI</sub>(t)</li>
+</ol>
+<h1 id="properties-of-lti-systems">Properties of LTI Systems</h1>
+<p>One very important property is that integrating and deriving the input of an LTI system propagates to the output: </p>
+<p>\[\because x(t) \Rightarrow y(t),\]
+\[\therefore \frac{dx}{dt} \Rightarrow \frac{dy}{dt}\]
+\[\therefore \int_{-\inf}^tx(\tau)d\tau \Rightarrow \int_{-\inf}^ty(\tau)d\tau\]</p>
+<p>This follow-through becomes very useful when we consider that fundamental properites of current and voltage are related by derivation in capacitors and inductors, and one elementary DSP function, the <a href="/engd/dsp/elem-func#unit-step">unit step</a>, is the derivative of the <a href="/engd/dsp/elem-func#unit-impulse">unit impulse</a>. In fact, the latter case is so useful that the LTI responses to unit-impulse and unit-step have their own names and notation: </p>
+<p>\[x(t) = \delta(t) \Rightarrow y(t) = h(t) \ x(t) = u(t) \Rightarrow y(t) = g(t)\]</p>
+<p>The impulse response is called h(t), while the step response is called g(t). Because of the step-unit relationship, and the fact that derivatives and integrations carry through, the impulse response h(t) is the derivative of the step response g(t).</p>
+<p>\[h(t) = \frac{dg(t)}{dt} \ g(t) = \int_{-\inf}^t h(\tau) d\tau\]</p>
+
+</div>
+
+            </div>
+        </div>
+       
+      <!-- JS, loaded after document -->
+      <script src="/scripts/nav.js" type="text/javascript" charset="utf-8"></script>
+      <!-- Overwrite this block in a child template to load extra scripts. -->
+      </body>
+</html>
