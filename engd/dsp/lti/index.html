@@ -131,14 +131,23 @@ y<sub>TI</sub>(t) = y(t-T)</li>
 y<sub>1</sub>(t) ?= y<sub>TI</sub>(t)</li>
 </ol>
 <h1 id="properties-of-lti-systems">Properties of LTI Systems</h1>
-<p>One very important property is that integrating and deriving the input of an LTI system propagates to the output: </p>
+<p>If the LTI conditions are met, the system is also: </p>
+<ol>
+<li>Dynamic, meaning it has memory.</li>
+<li>Invertible, meaning it can be flipped over the dependent axis. </li>
+<li>Causal, meaning the output depends only on past and present inputs. </li>
+<li>Real, meaning inputs and outputs are fully real numbers. </li>
+<li>Stable, so they produce bounded outputs for bounded inputs. </li>
+</ol>
+<p>Another very important property is that integrating and deriving the input of an LTI system propagates to the output: </p>
 <p>\[\because x(t) \Rightarrow y(t),\]
 \[\therefore \frac{dx}{dt} \Rightarrow \frac{dy}{dt}\]
 \[\therefore \int_{-\inf}^tx(\tau)d\tau \Rightarrow \int_{-\inf}^ty(\tau)d\tau\]</p>
 <p>This follow-through becomes very useful when we consider that fundamental properites of current and voltage are related by derivation in capacitors and inductors, and one elementary DSP function, the <a href="/engd/dsp/elem-func#unit-step">unit step</a>, is the derivative of the <a href="/engd/dsp/elem-func#unit-impulse">unit impulse</a>. In fact, the latter case is so useful that the LTI responses to unit-impulse and unit-step have their own names and notation: </p>
-<p>\[x(t) = \delta(t) \Rightarrow y(t) = h(t) \ x(t) = u(t) \Rightarrow y(t) = g(t)\]</p>
+<p>\[x(t) = \delta(t) \Rightarrow y(t) = h(t) \\ x(t) = u(t) \Rightarrow y(t) = g(t)\]</p>
 <p>The impulse response is called h(t), while the step response is called g(t). Because of the step-unit relationship, and the fact that derivatives and integrations carry through, the impulse response h(t) is the derivative of the step response g(t).</p>
-<p>\[h(t) = \frac{dg(t)}{dt} \ g(t) = \int_{-\inf}^t h(\tau) d\tau\]</p>
+<p>\[h(t) = \frac{dg(t)}{dt} \\ g(t) = \int_{-\inf}^t h(\tau) d\tau\]</p>
+<p>The impulse response is fundamental in analyzing LTI systems! It is the keystone of <a href="/engd/dsp/convolution">Convolution Integration</a> -- mapping outputs to inputs, knowing only the impulse response (and a whole lot of math...). </p>
 
 </div>
 

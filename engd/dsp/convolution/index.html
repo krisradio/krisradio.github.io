@@ -80,46 +80,34 @@
                 </div>-->
             
             
-<div class="section">
-    <h1>Web Development</h1>
-    <div></div>
+<div class="post">
+  <h1 class="post-title">Convolution Integral</h1>
+  <span class="post-date">2020-04-27</span>
+  <p>In Digital Signal Processing, the Convolution operation, notated &quot;ⓧ&quot;, is used to map the output of a <a href="/engd/dsp/lti">Linear Time-Invariant System</a> to any input function, and the reverse. Only the impulse response (called the kernal, filter kernal, or convolution kernal) must be known. From the impulse response, any input can be convoluted to its output, and any output deconvoluted to the causal input. </p>
+<p>The Convolution Equation: </p>
+<p>\[y(t) = x(t) \otimes h(t) \]</p>
+<p>Where x(t) and h(t) include the input and unit response, in either order. </p>
+<h2 id="mapping-inputs">Mapping Inputs</h2>
+<p>Any function can be broken down into discrete intervals, and atomized into discrete points. An LTI System defines the response to a unit impulse, a single discrete-time input of unit area, as h(t): </p>
+<p>\[\delta(t) \Rightarrow h(t) \]</p>
+<p>The output h(t) may be of <em>longer duration than the</em> (instantaneous) <em>input</em>. Therefore, the response would affect the output at the moment the input is applied and <em>into</em> the future. </p>
+<p>Due to the properties of linearity and time-invariance, we can also scale and shift the input by any real number, and see the exact same translation on the output: </p>
+<p>\[k\delta(t-T) \Rightarrow kh(t-T) \]</p>
+<p>More complicated signals, like sine waves, square waves, and exponentials can all be represented by superpositioned unit impulses. Thereby we can superposition detailed inputs to achieve a desired output. </p>
+<h2 id="charting-outputs">Charting Outputs</h2>
+<p>Whether an LTI's output is discrete or continuous, any individual signal or interval is the sum of multiple super-positioned, possible scaled or shifted, impulse responses. The system's response could be a square pulse, a half-cycle of a sinusoid, a sawtooth. But once an input triggers that response signal, it will echo in the system's memory, overlapping with fading responses and new ones, until it has run its course (i.e. exponentially decayed to zero, reached the end of its sequence). </p>
+<p>The discrete summation of a convoluted output at t=i, for a unit response of duration [0, M]: </p>
+<p>\[y(i) = \sum_{j=0}^{M-1} h(j) x(i-j)\]</p>
+<p>Notice how one of the input or unit response is time-shifted by the index of summation, but the other is not? Think of it as a moving frame of reference: One signal passing another, stock-still. What does the output look like when an inputs that happened before, or just happened, is convoluted with the system's response? Equally, what output follows from responses in the past up to the present are convoluted with an input? </p>
+<p>The answers to both questions are the same. That is because of the Commutative Property of integrals: that inputs and outputs may be switched. This opening statement will be <a href="https://krisrad.io/engd/dsp/convolution/#commutative-property">proved</a> further along. </p>
 
-    
-    
-    
-        
-    
-    <div class="half column">
-        <a href="https:&#x2F;&#x2F;krisrad.io&#x2F;engd&#x2F;web&#x2F;host-p2p-site-on-dat&#x2F;">
-                    <div class="sub page">
-                        <h3>Self Host a P2P site (with centralized backups)</h3>
-                        <span></span>
-                    </div>
-                </a>
-            <a href="https:&#x2F;&#x2F;krisrad.io&#x2F;engd&#x2F;web&#x2F;dat-jekyll-refactor&#x2F;">
-                    <div class="sub page">
-                        <h3>Refactoring from Jekyll to Dat</h3>
-                        <span></span>
-                    </div>
-                </a>
-            
-        </div>
-    <div class="half column">
-        <a href="https:&#x2F;&#x2F;krisrad.io&#x2F;engd&#x2F;web&#x2F;four-static-site-generators&#x2F;">
-                    <div class="sub page">
-                        <h3>Survey of Four Static Site Generators</h3>
-                        <span></span>
-                    </div>
-                </a>
-            
-        </div>
-    </div>
+</div>
 
             </div>
         </div>
        
       <!-- JS, loaded after document -->
       <script src="/scripts/nav.js" type="text/javascript" charset="utf-8"></script>
-      <script src="/scripts/splash.js" type="text/javascript" charset="utf-8"></script>
-</body>
+      <!-- Overwrite this block in a child template to load extra scripts. -->
+      </body>
 </html>

@@ -15,6 +15,15 @@
 
       
 
+
+      <!-- CSS & JS for Katex math formatting. -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.css" integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws" crossorigin="anonymous">
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.js" integrity="sha384-4z8mjH4yIpuK9dIQGR1JwbrfYsStrNK6MP+2Enhue4eyo0XlBDXOIPc8b6ZU0ajz" crossorigin="anonymous"></script>
+      <!-- Automatically render Katex onload. -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
       
       
     </head>
@@ -74,7 +83,10 @@
 <div class="post">
   <h1 class="post-title">Capacitance, Inductance, and Impedance</h1>
   <span class="post-date">2020-04-12</span>
-  <h2 id="impedance">Impedance</h2>
+  <h2 id="capacitance">Capacitance</h2>
+<p>Current through a capacitor equals the capacitance times the derivative of the terminal voltage:</p>
+<p>I = C dV/dt </p>
+<h2 id="impedance">Impedance</h2>
 <h2 id="rc-circuits">RC Circuits</h2>
 <ol>
 <li>Natural Response</li>
